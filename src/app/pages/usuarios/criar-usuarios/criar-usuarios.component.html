@@ -1,0 +1,34 @@
+<section class="criar">
+    <div class="menu">
+        <div class="links">
+            <a href="/usuarios">Usuários / </a>
+            <a href="/criar-usuarios">Novos Usuários</a>
+        </div>
+        <div>
+            <h2>NOVO USUÁRIO</h2>
+            <h4>Cadastre um novo usuário no sistema</h4>
+        </div>
+    </div>
+    <body>
+        <div class="modal">
+            <h4>Dados do Usuário</h4>
+            <form [formGroup]="form" (ngSubmit)="salvar()" class="forms">
+                <div class="form-input">
+                    <p>Nome Completo</p>
+                    <input class="inputs" type="text" name="nome" id="nome" placeholder="Digite o nome completo" formControlName="nome">
+                </div>
+                <div class="form-input">
+                    <p>E-mail</p>
+                    <input class="inputs" type="text" name="email" id="email" formControlName="email">
+                </div>
+                <div class="form-input">
+                    <p>Telefone</p>
+                    <input class="inputs" type="text" name="telefone" id="telefone" formControlName="telefone">
+                </div>
+                <div class="form-input-button">
+                    <button type="submit">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</section>

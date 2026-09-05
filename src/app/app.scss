@@ -1,0 +1,14 @@
+/* Container pai que segura a Sidebar e o Conteúdo */
+.app-layout {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh; /* Ocupa toda a altura da tela */
+}
+
+/* Área principal onde as páginas (Dashboard, Acervo, etc.) renderizam */
+.content-area {
+  flex: 1; /* Ocupa todo o espaço restante ao lado da sidebar */
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+}

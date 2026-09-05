@@ -1,0 +1,127 @@
+.page {
+  padding: 32px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 28px;
+}
+
+.header p {
+  margin-top: 6px;
+  color: #64748b;
+}
+
+.card {
+  max-width: 700px;
+  background: white;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #334155;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  background: white;
+}
+
+select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.prazos {
+  display: flex;
+  gap: 12px;
+}
+
+.prazo {
+  flex: 1;
+  padding: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.prazo:hover {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.prazo input {
+  margin-right: 8px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.success {
+  padding: 12px;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 8px;
+}
+
+.error {
+  display: block;
+  margin-top: 6px;
+  color: #dc2626;
+  font-size: 13px;
+}
+
+.error-box {
+  padding: 12px;
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 8px;
+}

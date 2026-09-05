@@ -1,0 +1,165 @@
+<div class="page">
+
+  <div class="header">
+    <div>
+      <h1>Novo Empréstimo</h1>
+      <p>Registre um novo empréstimo de livro</p>
+    </div>
+  </div>
+
+  <div class="card">
+
+    <form [formGroup]="form" (ngSubmit)="enviar()">
+
+      <!-- Usuário -->
+      <div class="form-group">
+
+        <label for="usuario">
+          Usuário
+        </label>
+
+        <select
+          id="usuario"
+          formControlName="usuarioId">
+
+          <option [ngValue]="null">
+            Selecione o usuário
+          </option>
+
+          <option [ngValue]="1">
+            João da Silva
+          </option>
+
+          <option [ngValue]="2">
+            Maria Souza
+          </option>
+
+          <option [ngValue]="3">
+            Pedro Santos
+          </option>
+
+        </select>
+
+        @if (
+          form.controls.usuarioId.touched &&
+          form.controls.usuarioId.invalid
+        ) {
+          <span class="error">
+            Selecione um usuário.
+          </span>
+        }
+
+      </div>
+
+
+      <!-- Livro -->
+      <div class="form-group">
+
+        <label for="livro">
+          Livro
+        </label>
+
+        <select
+          id="livro"
+          formControlName="livroId">
+          <option [ngValue]="null">
+            Selecione o livro
+          </option>
+          @for (livro of livrosDisponiveis; track livro.id){
+            @if(livro.disponivel === false){
+                <option [ngValue]="livro.id">
+                  {{livro.titulo}}
+                </option>
+            }
+          }
+        </select>
+
+        @if (
+          form.controls.livroId.touched &&
+          form.controls.livroId.invalid
+        ) {
+          <span class="error">
+            Selecione um livro.
+          </span>
+        }
+
+      </div>
+
+
+      <!-- Prazo -->
+      <div class="form-group">
+
+        <label>
+          Prazo de devolução
+        </label>
+
+        <div class="prazos">
+
+          <label class="prazo">
+            <input
+              type="radio"
+              formControlName="prazoDias"
+              [value]="7">
+
+            <span>
+              7 dias
+            </span>
+          </label>
+
+
+          <label class="prazo">
+            <input
+              type="radio"
+              formControlName="prazoDias"
+              [value]="14">
+
+            <span>
+              14 dias
+            </span>
+          </label>
+
+
+          <label class="prazo">
+            <input
+              type="radio"
+              formControlName="prazoDias"
+              [value]="21">
+
+            <span>
+              21 dias
+            </span>
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <!-- Mensagem -->
+      @if (mensagem) {
+        <div class="success">
+          {{ mensagem }}
+        </div>
+      }
+
+      @if (erro) {
+        <div class="error-box">
+          {{ erro }}
+        </div>
+      }
+
+
+      <!-- Botões -->
+      <div class="actions">
+
+        <button
+          type="button"
+          class="btn-secondary" (click)="cancelar()">Cancelar</button>
+
+        <button
+          type="submit"
+          class="btn-primary">Realizar Empréstimo</button>
+      </div>
+    </form>
+  </div>
+</div>

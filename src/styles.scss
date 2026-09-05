@@ -1,0 +1,23 @@
+/* 1. Remove margens/paddings padrão e ajusta o cálculo de caixa */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Força o HTML e o BODY a ocupar 100% da janela (viewport) */
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+/* 3. Garante que o componente raiz do Angular também ocupe 100% da altura */
+app-root {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+
